@@ -1,0 +1,385 @@
+/* Used to access all of the colors by variables*/
+:root {
+  --primary-color: #fffffe;
+  --text-color: #2b2c34;
+  --highlight-color: #6246ea;
+  --highlight-secondary-color: #7f6aeb;
+  --highlight-tertiary-color: #a8a0d4;
+  --secondary-color: #d1d1e9;
+  --tertiary-color: #e45858;
+  --fourth-color: #03d3fc;
+}
+
+body{
+  font-family: Verdana, Tahoma, Arial, sans-serif;
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  max-width: 1000px;
+  margin: auto;
+}
+/*********************************/
+/*****  START OF NAV STYLING  ****/
+/*********************************/
+/* Start of Search Bar Styling */
+.SearchBox {
+  height: 30px;
+  width: 200px;
+  font-size: 20px;
+  font-family: Verdana, Tahoma, Arial, sans-serif;
+  align-items: center;
+} .SearchBar {
+  position: absolute;
+  right: calc(50% - 475px);
+  top: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+} .SearchButton {
+  height: 32px;
+  width: 35px;
+  margin-top: -1px;
+}
+/* End of Search Bar Styling */
+/* Start of Drop Down Menu Styling */
+.parent {
+	display: block;
+	position: relative;
+	/*float: left;*/
+	line-height: 45px;
+	background-color: var(--highlight-color);
+  padding: 0 30px 0 30px;
+}
+.parent a {
+	margin: 10px;
+	color: var(--primary-color);
+	text-decoration: none;
+}
+.parent:hover>ul {
+	display: block;
+	position: absolute;
+}
+.child {
+	display: none;
+}
+.child li {
+	background-color: var(--secondary-color);
+	line-height: 30px;
+	border-bottom: var(--text-color) 1px solid;
+  border-left: var(--text-color) 1px solid;
+	width: 80%;
+  padding-left: 10px;
+  padding-right: 10px;
+  left: -30px;
+}
+.child li a {
+	color: var(--text-color);
+}
+.child .child li{
+  border-right: var(--text-color) 1px solid;
+  width: 100%;
+}
+/*
+.child:first-child{
+  border-top: var(--text-color) 1px solid;
+}
+*/
+ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	min-width: 10em;
+}
+ul ul ul {
+	left: 100%;
+	top: 0;
+}
+li:hover {
+	background-color: var(--highlight-secondary-color);
+}
+.parent li:hover {
+	background-color: var(--highlight-secondary-color);
+}
+.expand {
+	font-size: 12px;
+	float: right;
+	margin-right: 5px;
+}
+#menu {
+  display: flex;
+  justify-content: space-evenly;
+}
+/* End of Drop Down Menu Styling */
+/*       Other Nav Styling       */
+.PageName {
+  background-color: var(--secondary-color);
+  border: 5px solid var(--tertiary-color);
+  border-radius: 25px;
+  margin: auto;
+  width: 300px;
+  height: 69px; /* this is the actual height of the text naturally, it is just being rounded lol */
+  text-align: center;
+}
+.LogoCon{
+  position: absolute;
+  top: 25px;
+}
+.LogoCon img {
+  width: 79px;
+  height: 79px;
+}
+.Top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 25px;
+}
+.Bottom {
+  box-sizing: border-box;
+  width: calc(100% - 50px);
+  margin: 25px;
+  margin-bottom: 0px;
+  background-color: var(--secondary-color);
+  border: 5px solid var(--tertiary-color);
+  border-radius: 25px;
+}
+.Bottom li {
+  font-size: 20px;
+}
+.active{
+  background-color: var(--highlight-tertiary-color);
+}
+/* Alex's styling of search bar*/
+.SearchBar{
+  position: absolute;
+  right: calc(50% - 475px); /* only works for vw >= 1000, need media query otherwise*/
+  top: 50px; /* 25(margin) + ( 40(half of image height) - 15(half of own height) ) */
+}
+@media screen and (max-width: 1020px) {
+  .SearchBar{
+    right: 25px;
+  }
+}
+@media screen and (max-width: 900px) {
+  .LogoCon{
+    position: relative;
+    top: 0;
+  }
+  .SearchBar{
+    position: relative;
+    right: 0px;
+    top: 0px;
+  }
+  .Top{
+    height: 79px;
+  }
+  /*.parent{
+    padding: 0 15px 0 15px;
+  }
+  .child li{
+    left: -15px;
+  }*/
+}
+/*********************************/
+/*****   END OF NAV STYLING  *****/
+/*********************************/
+/*** START OF HOMEPAGE STYLING ***/
+/*********************************/
+.UNIX_History {
+  background-color: var(--secondary-color);
+  border: 5px solid var(--tertiary-color);
+  border-radius: 25px;
+  margin: 25px;
+  margin-right: 12.5px;
+  padding-left: 25px;
+  padding-right: 25px;
+  width: calc(100% - 125px); /* 125: 25 for left margin, 25 for right margin, 25 for middle margin, 50 for padding*/
+} .HomepageIMG {
+  background-color: var(--secondary-color);
+  border: 5px solid var(--tertiary-color);
+  margin: 25px;
+  margin-left: 12.5px;
+  width: calc(100% - 75px);
+  height: 0%; /* I do not know how to get the bottom sliver off of the bounding box for the image*/
+} .HomepageIMG img {
+  width: 100%;
+  height: auto;
+  margin: 0;
+  display: block;
+} .HomepageContent {
+  display: flex;
+}
+
+/* Mobile view homepage */
+@media screen and (max-width: 725px) {
+  .LogoCon{
+    grid-area: logo;
+  }
+  .PageName{
+    grid-area: title;
+  }
+  .SearchBar{
+    grid-area: search_bar;
+    margin: auto;
+    margin-top: 25px;
+  }
+  .Top{
+    display: grid;
+    height: auto;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr calc(37.5px + 25px); /*37.5(height of search bar) + 25(margin)*/
+    grid-template-areas: "logo title"
+                         "search_bar search_bar";
+  }
+  #menu{
+    flex-direction: column;
+  }
+  .parent{
+    margin-top: 12.5px;
+    margin-bottom: 12.5px;
+  }
+  .parent .child .parent{
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  #menu:first-child{
+    margin-top: 12.5px;
+  }
+  #menu:last-child{
+    margin-bottom: 12.5px;
+  }
+  .child{
+    z-index: 2;
+  }
+  .HomepageContent {
+    display: block;
+  }
+  .UNIX_History{
+    margin: 25px;
+    width: calc(100% - 110px);
+  }
+  .HomepageIMG{
+    margin: 25px;
+    width: calc(100% - 60px);
+  }
+}
+/*********************************/
+/***  END OF HOMEPAGE STYLING  ***/
+/*********************************/
+/***                           ***/
+/*********************************/
+
+
+/*
+.ContentPageNav{
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  grid-template-areas: "top top";
+}
+.ContentPageNav .Top{
+  grid-area: top;
+}
+.ContentPageNav ul{
+  list-style: none;
+}
+.ContentPageNav #menu{
+  padding-left: 25px;
+}
+.ContentPageNav .Bottom{
+  width: 240px;
+  margin: 25px;
+  margin-top: 0px;
+  background-color: var(--secondary-color);
+  border: 5px solid var(--tertiary-color);
+  border-radius: 25px;
+}
+.ContentPageNav section{
+  margin: 25px;
+  margin-left: 0px;
+  margin-top: 0px;
+  padding-left: 25px;
+  padding-right: 25px;
+  background-color: var(--secondary-color);
+  border: 5px solid var(--tertiary-color);
+  border-radius: 25px;
+}
+*/
+
+main{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.sideNav{
+  grid-template-columns: 200px 1fr;
+}
+.HomepageMain{
+  display: block;
+}
+section:nth-child(odd){
+  margin-right: 12.5px;
+}
+section:nth-child(even){
+  margin-left: 12.5px;
+}
+section{
+  margin: 25px;
+  padding-left: 25px;
+  padding-right: 25px;
+  background-color: var(--secondary-color);
+  border: 5px solid var(--tertiary-color);
+  border-radius: 25px;
+}
+
+footer{
+  margin: 25px;
+  margin-top: 0px;
+  background-color: var(--secondary-color);
+  border: 5px solid var(--tertiary-color);
+  border-radius: 25px;
+  text-align: center;
+}
+
+/* classes for singular do not take president over nth-child, neither does a media query, but id does */
+#singular{
+  grid-column: 1 / 3;
+  margin-right: 25px;
+}
+img{
+  width: 100%;
+}
+.centeredIMG{
+  text-align: center;
+}
+#terminal{
+  width: 200px;
+}
+.maxWidth500{
+  max-width: 500px;
+}
+.maxWidth200{
+  max-width: 200px;
+}
+.side_nav{
+  color: var(--primary-color);
+  width: calc(200px - 100px); /* container width - margins*/
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+.side_nav li{
+  width: calc(200px - 100px); /* container width - margins*/
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+/* Mobile view non-homepage */
+@media screen and (max-width: 725px) {
+  main{
+    display: block;
+  }
+  section:nth-child(odd){
+    margin-right: 25px;
+  }
+  section:nth-child(even){
+    margin-left: 25px;
+  }
+}

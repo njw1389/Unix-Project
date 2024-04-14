@@ -1,0 +1,72 @@
+body {
+    background-color: #1c1c1c;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.terminal {
+    background-color: #000;
+    color: #fff;
+    padding: 30px;
+    font-size: 16px;
+    border-radius: 5px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+    cursor: text;
+}
+.out {
+    margin-bottom: 10px;
+}
+
+.input-container {
+    display: flex;
+    align-items: center;
+    margin-top: 10px; /* add a margin to separate the input-container and the previous text */
+}
+
+.prompt {
+    display: inline-block;
+    color: #fff;
+    font-family: 'Courier New', Courier, monospace;
+    margin-right: 10px;
+    white-space: nowrap; /* prevent the prompt from wrapping to a new line */
+}
+
+input[type="text"] {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    font-family: 'Courier New', Courier, monospace;
+    width: calc(100% - 10px - 1ch);
+    padding: 0;
+}
+
+input[type="text"]:focus {
+    caret-color: #fff;
+}
+
+input[type="text"]::placeholder {
+    color: #fff;
+    opacity: 0.5;
+}
+
+.buttons {
+    margin-top: 20px;
+}
+.buttons a {
+    background-color: #fff;
+    color: #1c1c1c;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
